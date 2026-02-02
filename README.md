@@ -1,5 +1,5 @@
-# sce's cicd server
-
+# My home lab cicd server
+## Future development will include tailscale control for container funnels.
 ### how to run
 - [ ] get the smee url and discord webhook url from a dev member
 - [ ] create a `.env` file like
@@ -24,12 +24,18 @@ python -m pip install -r requirements.txt
 - [ ] (if not development) create a `config.yml` file like
 ```yml
 repos:
-  - name: git-workshop
+  - name: headrick
     branch: main
-    path: /home/sce/git-workshop
-  - name: monitoring
+    path: /home/hedrick
+    tailscale:
+      - 8080
+      - 3389
+  -
+    name: cool-project
     branch: main
-    path: /home/sce/monitoring
+    path: /home/cool-project
+    tailscale: 
+      - 80
 ```
 - [ ] in the same terminal, run the server with
 ```sh
