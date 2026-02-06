@@ -216,6 +216,16 @@ def update_repo(repo_config: RepoToWatch) -> RepoUpdateResult:
         result.docker_stdout = docker_result.stdout
         result.docker_stderr = docker_result.stderr
         result.git_exit_code = git_result.returncode
+        
+        #add tailscale funnel stuff later
+        # for port in repo_config.tailscale:
+        #     tailscale_result = subprocess.run(
+        #         ["tailscale", "funnel", str(port)],
+        #         cwd=repo_config.path,
+        #         capture_output=True,
+        #         text=True,  
+        #     )
+
         push_update_success_as_discord_embed(repo_config, result)
     except Exception:
         logger.exception("update_repo had a bad time")
