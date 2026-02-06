@@ -206,7 +206,7 @@ def update_repo(repo_config: RepoToWatch) -> RepoUpdateResult:
         result.git_exit_code = git_result.returncode
 
         docker_result = subprocess.run(
-            ["docker-compose", "up", "--build", "-d"],
+            ["sudo", "docker", "compose", "up", "--build", "-d"],
             cwd=repo_config.path,
             capture_output=True,
             text=True,

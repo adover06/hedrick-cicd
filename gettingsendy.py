@@ -6,7 +6,7 @@ dotenv.load_dotenv()
 
 
 SMEE_URL = os.getenv("SMEE_URL") or "https://smee.io/YOUR_CHANNEL"
-PAYLOAD = {"ref": "refs/heads/main", "repository": {"name": "liturgy.display"}}
+PAYLOAD = {"ref": "refs/heads/master", "repository": {"name": "PersonalPortfolio"}}
 
 
 def main():
